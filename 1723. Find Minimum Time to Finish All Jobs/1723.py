@@ -1,6 +1,16 @@
 from typing import List
 
+
 class Solution:
+
+    '''
+    DFS + Pruning
+
+    Time Complexity: O(k^n)
+    Space Complexity: O(k)
+
+    '''
+
     def minimumTimeRequired(self, jobs: List[int], k: int) -> int:
         workers = [0] * k
         self.res = float('inf')
@@ -12,7 +22,7 @@ class Solution:
             if curr == len(jobs):
                 self.res = min(self.res, max(workers))
                 return
-            
+
             visited = set()
             for i in range(self.start, self.start + k):
                 i %= k
@@ -24,11 +34,11 @@ class Solution:
                 workers[i] += jobs[curr]
                 dfs(curr + 1)
                 workers[i] -= jobs[curr]
-        
+
         dfs(0)
         return self.res
 
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.minimumTimeRequired([1,2,4,7,8], 2))
+    print(s.minimumTimeRequired([1, 2, 4, 7, 8], 2))

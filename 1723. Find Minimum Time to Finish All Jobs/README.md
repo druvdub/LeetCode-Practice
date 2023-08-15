@@ -1,4 +1,4 @@
-### 1723. Find Minimum Time to Finish All Jobs
+### [1723. Find Minimum Time to Finish All Jobs](https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/description/)
 
 You are given an integer array `jobs`, where `jobs[i]` is the amount of time it takes to complete the <code>i<sup>th</sup></code> job.
 
